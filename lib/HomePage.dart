@@ -117,14 +117,23 @@ class _HomePageState extends State<HomePage> {
                   child: Text("Create", style: TextStyle(color: Colors.white)),
                 ),
                 ElevatedButton(
-                  onPressed: () async {},
+                  onPressed: () async {
+                    final person = Person(
+                      idController.text.trim(),
+                      tenController.text.trim(),
+                      int.parse(ageController.text.trim()),
+                    );
+                    await personBox.put(person.id, person);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.greenAccent,
                   ),
                   child: Text("Update", style: TextStyle(color: Colors.white)),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () async{
+                    await personBox.delete(idController.text.trim());
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.cyanAccent,
                   ),
