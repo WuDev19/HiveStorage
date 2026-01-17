@@ -4,6 +4,7 @@ import 'package:hive_storage/Person.dart';
 
 import 'HomePage.dart';
 
+//Hive phù hợp với cache
 void main() async {
   //đảm bảo flutter engine đã được khởi tạo
   WidgetsFlutterBinding.ensureInitialized();
